@@ -19,7 +19,8 @@ int main() {
   rellenarArreglo(arrintdenumeros, intcantdenum);
   cout << "Tu array es:  ";
   imprimirArreglo(arrintdenumeros, intcantdenum);
-  cout << "Los nC:meros impares son:  ";
+  cout << "\n";
+  cout << "Los nC:meros impares con sus respectivas rutas son:  ";
   impresordeImparesyRutas(arrintdenumeros, intcantdenum);
   return 0;
 }
@@ -53,12 +54,13 @@ void imprimirArreglo(int *arrintdenumeros, int inttamano) {
 }
 
 void impresordeImparesyRutas(int *arrintdenumeros, int inttamano) {
-  cout << "[";
-  for (int i = 0; i < inttamano - 1; i++) {
-    int intempo = arrintdenumeros[i];
+  cout << "\n";
+  int inttempo;
+  for (int i = 0; i < inttamano; i++) {
+    inttempo = arrintdenumeros[i];
     if (inttempo % 2 != 0) {
-      cout << inttempo << " : " << intempo* << ", ";
+      cout << inttempo << " : " << &arrintdenumeros[i] << ", ";
+      cout << "\n";
     }
   }
-  cout << arrintdenumeros[inttamano - 1] << "]\n";
 }
