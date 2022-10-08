@@ -12,15 +12,17 @@ class Nodo {
 };
 
 // cree una lista para reutilizarla en la pregunta 4
-class Lista {
+class Pila {
   public:
   Nodo* inicio;
   Nodo* final;
-  Lista(Nodo* nodito){
+  Pila(int valor){//aqui describimos con que valor arrancara nuestra esttructura
+    Nodo* nodito = new Nodo();
+    nodito->valor = valor;
     inicio = nodito;
     nodito->siguiente = nullptr;
     //final = nodito;
-    cout << "lista creada\n";
+    cout << "lista creada con " << valor << " como arranque\n";
   }
   void push (Nodo* nodito){
     nodito->siguiente = inicio;
@@ -53,12 +55,8 @@ class Lista {
   }
 };
 
-
-
 int main() { 
-  Nodo* amigo = new Nodo();
-  amigo->valor = 5;
-  Lista Pila(amigo);
+  Pila Pila(5);
   Pila.add(6);
   Pila.add(7);
   Pila.pop();
